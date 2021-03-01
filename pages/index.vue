@@ -1,27 +1,8 @@
 <template>
   <div class="container">
-    <b-button>AAA</b-button>
     <div>
       <Logo />
-      <h1 class="title">bdo-content</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <h3 class="mt-3">{{ test }}</h3>
     </div>
   </div>
 </template>
@@ -29,7 +10,16 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data() {
+    return {
+      test: '',
+    }
+  },
+  mounted() {
+    this.test = process.env.TEST || 'Hello !!'
+  },
+})
 </script>
 
 <style>
