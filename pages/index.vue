@@ -1,9 +1,30 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h3 class="mt-3">{{ test }}</h3>
-    </div>
+  <div class="home--page">
+    <b-container class="home--page__container">
+      <!-- <Logo /> -->
+      <b-row>
+        <b-col cols="12" class="text-center mb-5">
+          <h3>illusion wiki</h3>
+          <p class="home--text__title">illusion wiki</p>
+          <span class="home--text">is coming...</span>
+        </b-col>
+      </b-row>
+      <b-row no-gutters>
+        <b-col cols="4" md="2" v-for="(link, key) in listsImage" :key="key">
+          <div class="home--group">
+            <img class="home--img" :src="link.src" alt="" />
+          </div>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col cols="12" class="mt-5">
+          <a href="https://www.facebook.com/ZendohTV" target="_bank">
+            <b-button class="home--btn facebook">FACEBOOK</b-button>
+          </a>
+        </b-col>
+      </b-row>
+      <!-- <h3 class="mt-3">{{ test }}</h3> -->
+    </b-container>
   </div>
 </template>
 
@@ -14,6 +35,32 @@ export default Vue.extend({
   data() {
     return {
       test: '',
+      listsImage: [
+        {
+          src:
+            'https://cdn.discordapp.com/attachments/319672282694025227/815973137325228082/2.png',
+        },
+        {
+          src:
+            'https://cdn.discordapp.com/attachments/319672282694025227/815973263427108924/P.png',
+        },
+        {
+          src:
+            'https://cdn.discordapp.com/attachments/319672282694025227/815979424125681696/848e5c86702c09e9.png',
+        },
+        {
+          src:
+            'https://cdn.discordapp.com/attachments/319672282694025227/815980853866921994/2.png',
+        },
+        {
+          src:
+            'https://cdn.discordapp.com/attachments/319672282694025227/815993451250057236/5c675bfa7e5d158b.png',
+        },
+        {
+          src:
+            'https://cdn.discordapp.com/attachments/319672282694025227/816020176561635398/001.png',
+        },
+      ],
     }
   },
   mounted() {
@@ -21,36 +68,6 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss" scoped>
+@import './style.scss';
 </style>
